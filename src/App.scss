@@ -1,0 +1,265 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "DM Sans", sans-serif;
+}
+body {
+  background: hsl(27, 66%, 92%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.appContainer {
+  width: 100%;
+  height: fit-content;
+  gap: 16px;
+  align-items: center;
+  .balance {
+    background: hsl(10, 79%, 65%);
+    border-radius: 16px;
+    width: 100%;
+    height: 110px;
+    display: flex;
+    justify-content: space-between;
+    .balancecontainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-left: 12px;
+      h1 {
+        color: white;
+        font-size: 18px;
+        font-weight: 400;
+      }
+      h2 {
+        color: white;
+        padding-left: 10px;
+        font-size: 32px;
+      }
+    }
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-right: 20px;
+    }
+  }
+  .main {
+    background: #fffcf7;
+    border-radius: 16px;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h3 {
+      font-size: 36px;
+      margin-left: 20px;
+      margin-top: 20px;
+      margin-right: 80px;
+    }
+    .graph {
+      width: 90%;
+      height: 190px;
+      .graphContainer {
+        width: 100%;
+        height: 190px;
+        display: flex;
+        justify-content: space-around;
+        .graphBarContainer {
+          display: flex;
+          flex-direction: column;
+          justify-content: end;
+          align-items: center;
+          .sum {
+            width: 60px;
+            height: 40px;
+            background: #392413;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            margin-bottom: 8px;
+            opacity: 0;
+          }
+          .graphbar {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            border-radius: 5px;
+            background: hsl(10, 79%, 65%);
+            width: 43px;
+          }
+        }
+
+        .graphBarContainer:hover * {
+          opacity: 1;
+        }
+        .graphbar:hover {
+          background: #ff9b87;
+        }
+        .graphBarContainer:active {
+          .graphbar {
+            background: hsl(186, 34%, 60%);
+          }
+        }
+      }
+      .days {
+        margin-top: 8px;
+        display: flex;
+        justify-content: space-around;
+        .day {
+          width: 43px;
+          text-align: center;
+          font-size: 18px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  .horLine {
+    height: 1.5px;
+    width: 85%;
+    background: rgb(231, 218, 207);
+    margin: 54px;
+  }
+  .total {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    margin-bottom: 32px;
+    .total-l {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      color: hsl(25, 47%, 15%);
+      p {
+        font-size: 16px;
+        color: hsl(28, 10%, 53%);
+      }
+      h1 {
+        font-size: 36px;
+      }
+    }
+    .total-r {
+      padding-top: 20px;
+      text-align: right;
+      h5 {
+        font-size: 16px;
+      }
+      h6 {
+        font-size: 14px;
+        font-weight: 400;
+        color: hsl(28, 10%, 53%);
+      }
+    }
+  }
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 550px) {
+  .appContainer {
+    width: 95vw;
+    margin: 0 auto;
+    padding: 0 10px;
+
+    .balance {
+      height: auto;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+      gap: 40%;
+
+      .balancecontainer {
+        margin-left: 0;
+        text-align: center;
+      }
+
+      .logo {
+        padding-right: 0;
+        margin-top: 12px;
+      }
+    }
+
+    .main {
+      h3 {
+        font-size: 20px;
+        width: 100%;
+        margin-left: 120px;
+      }
+      .graph {
+        width: 90%;
+        padding: 0;
+
+        .graphContainer {
+          display: flex;
+          justify-content: space-around;
+          gap: 8px;
+
+          .graphBarContainer {
+            flex: 1 0 auto;
+
+            .sum {
+              display: none;
+            }
+            .graphbar {
+              width: 36px;
+            }
+          }
+
+          .graphBarContainer:hover * {
+            opacity: 1;
+          }
+
+          .graphbar:hover {
+            background: #ff9b87;
+          }
+
+          .graphBarContainer:active .graphbar {
+            background: hsl(186, 34%, 60%);
+          }
+        }
+
+        .days {
+          display: flex;
+          justify-content: space-around;
+          margin-top: 8px;
+
+          .day {
+            width: 12%;
+            font-size: 14px;
+          }
+        }
+      }
+
+      .total {
+        gap: 70px;
+
+        .total-l {
+          align-items: center;
+          text-align: center;
+        }
+
+        .total-r {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
